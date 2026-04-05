@@ -1,6 +1,7 @@
 import os
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from xml.etree.ElementTree import Element, SubElement, tostring
@@ -29,50 +30,86 @@ def load_exclude_words() -> list[str]:
     return words
 
 
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    )
+}
+
+# タイトル末尾に混入するカテゴリ名＋日付パターン（例: "ライフスタイル > 文具・雑貨2026.04.05"）
+_TRAILING_JUNK_RE = re.compile(
+    r"[ぁ-んァ-ヶー一-龯a-zA-Z・＆&()（）\s>＞/／]+"  # カテゴリ部分
+    r"\d{4}\.\d{2}\.\d{2}$"                            # 日付部分
+)
+
+
+def _fetch_article_title(url: str) -> tuple[str, str | None]:
+    """記事ページから正式タイトルを取得する。戻り値は (url, title_or_None)。"""
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=15)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "lxml")
+
+        # h1 タグを優先
+        h1 = soup.find("h1")
+        if h1:
+            title = h1.get_text(strip=True)
+            if title:
+                return url, title
+
+        # フォールバック: <title> タグからサイト名を除去
+        title_tag = soup.find("title")
+        if title_tag:
+            title = re.sub(r"\s*[|｜].*$", "", title_tag.get_text(strip=True)).strip()
+            if title:
+                return url, title
+    except Exception:
+        pass
+    return url, None
+
+
 def scrape_articles() -> list[dict]:
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/120.0.0.0 Safari/537.36"
-        )
-    }
-    resp = requests.get(GENRE_URL, headers=headers, timeout=30)
+    resp = requests.get(GENRE_URL, headers=HEADERS, timeout=30)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "lxml")
 
-    articles = []
+    # Step 1: 一覧ページから記事URLを収集
+    urls = []
     seen_urls = set()
-
-    # dime.jp の記事リンクを収集（/genre/*** の形式）
     for a_tag in soup.find_all("a", href=True):
         href = a_tag["href"]
-
-        # 絶対URLに変換
         if href.startswith("/"):
             href = BASE_URL + href
-        if not href.startswith(BASE_URL):
-            continue
-
-        # 記事URLのパターン: /genre/数字/ のみ（タグ・ページネーション除外）
         if not re.fullmatch(r"https://dime\.jp/genre/\d+/", href):
             continue
-
         if href in seen_urls:
             continue
         seen_urls.add(href)
+        urls.append(href)
 
-        # タイトルを取得（a タグのテキスト or 親要素のタイトル系要素）
-        title = a_tag.get_text(strip=True)
-        if not title:
-            # 画像のalt属性を試みる
-            img = a_tag.find("img")
-            if img:
-                title = img.get("alt", "").strip()
+    print(f"  URL収集数: {len(urls)}")
+
+    # Step 2: 各記事ページを並列フェッチして正式タイトルを取得
+    title_map: dict[str, str] = {}
+    with ThreadPoolExecutor(max_workers=8) as executor:
+        futures = {executor.submit(_fetch_article_title, url): url for url in urls}
+        for future in as_completed(futures):
+            url, title = future.result()
+            if title:
+                title_map[url] = title
+
+    # Step 3: タイトルが取得できなかった URL を除外してリストを構築
+    articles = []
+    for url in urls:
+        title = title_map.get(url)
         if not title:
             continue
-
-        articles.append({"title": title, "url": href})
+        # 末尾のカテゴリ＋日付が残っている場合は除去（フォールバック用保険）
+        title = _TRAILING_JUNK_RE.sub("", title).strip()
+        if title:
+            articles.append({"title": title, "url": url})
 
     return articles
 
