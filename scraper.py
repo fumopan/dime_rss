@@ -54,8 +54,8 @@ def scrape_articles() -> list[dict]:
         if not href.startswith(BASE_URL):
             continue
 
-        # 記事URLのパターン: /genre/数字/ または /genre/カテゴリ/数字/
-        if not re.search(r"/genre/[^/]*/\d+/|/genre/\d+/", href):
+        # 記事URLのパターン: /genre/数字/ のみ（タグ・ページネーション除外）
+        if not re.fullmatch(r"https://dime\.jp/genre/\d+/", href):
             continue
 
         if href in seen_urls:
