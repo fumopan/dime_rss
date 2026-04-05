@@ -1,0 +1,49 @@
+name: DIME RSS Feed
+
+on:
+  schedule:
+    # JST = UTC+9 なので UTC で指定
+    - cron: "0 22 * * *"   #  7:00 JST
+    - cron: "0  4 * * *"   # 13:00 JST
+    - cron: "0  9 * * *"   # 18:00 JST
+    - cron: "0 12 * * *"   # 21:00 JST
+    - cron: "0 13 * * *"   # 22:00 JST (Gmail通知)
+  workflow_dispatch:        # 手動実行
+
+jobs:
+  update-feed:
+    # 22:00 JST (13:00 UTC) の実行時のみ通知ジョブも走らせる
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Run scraper
+        run: python scraper.py
+
+      - name: Commit and push feed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/feed.xml excluded_articles.json
+          git diff --cached --quiet || git commit -m "chore: update RSS feed [$(date +'%Y-%m-%d %H:%M JST' -d '+9 hours')]"
+          git push
+
+      - name: Send Gmail notification (22:00 JST only)
+        if: github.event.schedule == '0 13 * * *' || github.event_name == 'workflow_dispatch'
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+        run: python notify.py

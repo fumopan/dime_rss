@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>DIME.jp 最新記事</title>
+    <link>https://dime.jp/genre/</link>
+    <description>DIME.jpの最新記事フィード（除外ワードフィルタ済み）</description>
+    <language>ja</language>
+    <lastBuildDate>未生成</lastBuildDate>
+  </channel>
+</rss>
