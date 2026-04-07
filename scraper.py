@@ -45,29 +45,35 @@ _TRAILING_JUNK_RE = re.compile(
 )
 
 
-def _fetch_article_title(url: str) -> tuple[str, str | None]:
-    """記事ページから正式タイトルを取得する。戻り値は (url, title_or_None)。"""
+def _fetch_article_info(url: str) -> tuple[str, str | None, str | None]:
+    """記事ページから正式タイトルとOGP画像URLを取得する。戻り値は (url, title_or_None, image_url_or_None)。"""
     try:
         resp = requests.get(url, headers=HEADERS, timeout=15)
         resp.raise_for_status()
         soup = BeautifulSoup(resp.text, "lxml")
+
+        # OGP画像を取得
+        image_url = None
+        og_image = soup.find("meta", property="og:image")
+        if og_image and og_image.get("content"):
+            image_url = og_image["content"]
 
         # h1 タグを優先
         h1 = soup.find("h1")
         if h1:
             title = h1.get_text(strip=True)
             if title:
-                return url, title
+                return url, title, image_url
 
         # フォールバック: <title> タグからサイト名を除去
         title_tag = soup.find("title")
         if title_tag:
             title = re.sub(r"\s*[|｜].*$", "", title_tag.get_text(strip=True)).strip()
             if title:
-                return url, title
+                return url, title, image_url
     except Exception:
         pass
-    return url, None
+    return url, None, None
 
 
 def scrape_articles() -> list[dict]:
@@ -91,25 +97,25 @@ def scrape_articles() -> list[dict]:
 
     print(f"  URL収集数: {len(urls)}")
 
-    # Step 2: 各記事ページを並列フェッチして正式タイトルを取得
-    title_map: dict[str, str] = {}
+    # Step 2: 各記事ページを並列フェッチして正式タイトルとOGP画像を取得
+    info_map: dict[str, tuple[str, str | None]] = {}
     with ThreadPoolExecutor(max_workers=8) as executor:
-        futures = {executor.submit(_fetch_article_title, url): url for url in urls}
+        futures = {executor.submit(_fetch_article_info, url): url for url in urls}
         for future in as_completed(futures):
-            url, title = future.result()
+            url, title, image_url = future.result()
             if title:
-                title_map[url] = title
+                info_map[url] = (title, image_url)
 
     # Step 3: タイトルが取得できなかった URL を除外してリストを構築
     articles = []
     for url in urls:
-        title = title_map.get(url)
-        if not title:
+        if url not in info_map:
             continue
+        title, image_url = info_map[url]
         # 末尾のカテゴリ＋日付が残っている場合は除去（フォールバック用保険）
         title = _TRAILING_JUNK_RE.sub("", title).strip()
         if title:
-            articles.append({"title": title, "url": url})
+            articles.append({"title": title, "url": url, "image_url": image_url})
 
     return articles
 
@@ -140,7 +146,10 @@ def build_rss(articles: list[dict]) -> str:
     now = datetime.now(JST)
     pub_date = now.strftime("%a, %d %b %Y %H:%M:%S %z")
 
-    rss = Element("rss", version="2.0")
+    rss = Element("rss", {
+        "version": "2.0",
+        "xmlns:media": "http://search.yahoo.com/mrss/",
+    })
     channel = SubElement(rss, "channel")
 
     SubElement(channel, "title").text = "DIME.jp 最新記事"
@@ -150,12 +159,15 @@ def build_rss(articles: list[dict]) -> str:
     SubElement(channel, "lastBuildDate").text = pub_date
     SubElement(channel, "ttl").text = "60"
 
-    for article in articles:
+    for article in articles[:20]:
         item = SubElement(channel, "item")
         SubElement(item, "title").text = article["title"]
         SubElement(item, "link").text = article["url"]
         SubElement(item, "guid", isPermaLink="true").text = article["url"]
         SubElement(item, "pubDate").text = pub_date
+        if article.get("image_url"):
+            SubElement(item, "enclosure", url=article["image_url"], type="image/jpeg", length="0")
+            SubElement(item, "media:content", url=article["image_url"], medium="image")
 
     xml_str = tostring(rss, encoding="unicode", xml_declaration=False)
     pretty = xml.dom.minidom.parseString(
