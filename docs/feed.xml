@@ -5,85 +5,109 @@
     <link>https://dime.jp/genre/</link>
     <description>DIME.jpの最新記事フィード（除外ワードフィルタ済み）</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Apr 2026 19:28:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2026 22:21:07 +0900</lastBuildDate>
     <ttl>60</ttl>
+    <item>
+      <title>【ヒャダインの温故知新アナリティクス】なぜ、昭和男児シールブームはこないのか？</title>
+      <link>https://dime.jp/genre/2105606/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2105606/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/NGK-jpp088985306-770x433.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/04/NGK-jpp088985306-770x433.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>20年ぶりに「チェキ」を使ってわかった！スマホ全盛の今も売れ続ける理由</title>
+      <link>https://dime.jp/genre/2107222/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2107222/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/IMG_8113-770x578.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/04/IMG_8113-770x578.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>なぜ、RIZAPが建設業？チョコザップの急速な店舗展開を支えた独自のノウハウで新たな領域に挑む</title>
+      <link>https://dime.jp/genre/2107330/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2107330/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/IMG_6190.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/04/IMG_6190.jpg" medium="image"/>
+    </item>
     <item>
       <title>SUMIF関数の使い方完全ガイド！基本から応用まで徹底解説</title>
       <link>https://dime.jp/genre/2091910/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2091910/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_130525784_M-770x513.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_130525784_M-770x513.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>SUMIF関数とIF関数の組み合わせ完全ガイド！Excelで条件分岐を自在に操る基本テク</title>
-      <link>https://dime.jp/genre/2091756/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2091756/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98369743_M-770x513.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98369743_M-770x513.jpg" medium="image"/>
     </item>
     <item>
       <title>SUMIF関数の合計が「0」になる原因と対処法</title>
       <link>https://dime.jp/genre/2094507/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2094507/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_121986871_M-770x514.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_121986871_M-770x514.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>SUMIF関数でOR条件を設定する方法を解説！複数条件を合計する手順</title>
-      <link>https://dime.jp/genre/2095182/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2095182/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_129104203_M-770x513.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_129104203_M-770x513.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>SUMIF関数で「日付範囲」を条件にして合計する方法</title>
-      <link>https://dime.jp/genre/2094492/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2094492/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98387010_M-770x513.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98387010_M-770x513.jpg" medium="image"/>
     </item>
     <item>
       <title>SUM関数とFILTER関数を組み合わせてSUMIF関数のように使う方法を徹底解説</title>
       <link>https://dime.jp/genre/2095209/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2095209/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_131184328_M-770x513.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_131184328_M-770x513.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>SUMIF関数で「日付範囲」を条件にして合計する方法</title>
+      <link>https://dime.jp/genre/2094492/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2094492/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98387010_M-770x513.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98387010_M-770x513.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>SUMIF関数でOR条件を設定する方法を解説！複数条件を合計する手順</title>
+      <link>https://dime.jp/genre/2095182/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2095182/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_129104203_M-770x513.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_129104203_M-770x513.jpg" medium="image"/>
     </item>
     <item>
       <title>SUMIF関数を使って「以上」など条件付きで合計する方法</title>
       <link>https://dime.jp/genre/2093604/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2093604/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_99426908_M-770x513.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_99426908_M-770x513.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>SUMIF関数を使って「特定の文字列を含む条件」で合計する方法</title>
-      <link>https://dime.jp/genre/2093469/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2093469/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98693490_M-770x513.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98693490_M-770x513.jpg" medium="image"/>
     </item>
     <item>
       <title>SUMIF関数のエラーがでる原因は？具体例と対処法</title>
       <link>https://dime.jp/genre/2096073/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2096073/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_96645129_M-770x513.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_96645129_M-770x513.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>SUMIF関数を使って「特定の文字列を含む条件」で合計する方法</title>
+      <link>https://dime.jp/genre/2093469/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2093469/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98693490_M-770x513.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98693490_M-770x513.jpg" medium="image"/>
+    </item>
+    <item>
+      <title>SUMIF関数とIF関数の組み合わせ完全ガイド！Excelで条件分岐を自在に操る基本テク</title>
+      <link>https://dime.jp/genre/2091756/</link>
+      <guid isPermaLink="true">https://dime.jp/genre/2091756/</guid>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
+      <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98369743_M-770x513.jpg" type="image/jpeg" length="0"/>
+      <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98369743_M-770x513.jpg" medium="image"/>
     </item>
     <item>
       <title>SUMIF関数とVLOOKUP関数を組み合わせた便利な使い方とは？検索と合計結果を導き出す手順を解説</title>
       <link>https://dime.jp/genre/2091962/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2091962/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/03/pixta_98785884_M-770x513.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/03/pixta_98785884_M-770x513.jpg" medium="image"/>
     </item>
@@ -91,7 +115,7 @@
       <title>頑張らないセルフケアを可能にするクロスプラスのリカバリーウェア「HOGUSU」</title>
       <link>https://dime.jp/genre/2107319/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2107319/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/1-62-770x385.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/1-62-770x385.jpg" medium="image"/>
     </item>
@@ -99,7 +123,7 @@
       <title>やっぱり手書きで書くべき？退職届の書き方ガイド【例文付き】</title>
       <link>https://dime.jp/genre/1976820/</link>
       <guid isPermaLink="true">https://dime.jp/genre/1976820/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2025/05/shutterstock_1993379258-770x514.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2025/05/shutterstock_1993379258-770x514.jpg" medium="image"/>
     </item>
@@ -107,7 +131,7 @@
       <title>キングジムのデジタルメモ「ポメラ」に深いパープルのスケルトンボディを採用した限定モデルが登場</title>
       <link>https://dime.jp/genre/2107117/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2107117/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/01-117-770x433.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/01-117-770x433.jpg" medium="image"/>
     </item>
@@ -115,7 +139,7 @@
       <title>パナソニックと中部電力ミライズが冷蔵庫が賢く電気を使える「DR自動運転サービス」を提供開始</title>
       <link>https://dime.jp/genre/2106365/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2106365/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/2136-02.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/2136-02.jpg" medium="image"/>
     </item>
@@ -123,7 +147,7 @@
       <title>過去最高の5兆円超えを記録した中古車市場、購入単価は前年より19.3万円上昇</title>
       <link>https://dime.jp/genre/2107380/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2107380/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/shutterstock_2608375405-770x514.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/shutterstock_2608375405-770x514.jpg" medium="image"/>
     </item>
@@ -131,7 +155,7 @@
       <title>紙と電子を横断集計！日本初の書籍総合ランキング「ビルボードジャパンブックチャート」とは</title>
       <link>https://dime.jp/genre/2105711/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2105711/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/107-4-770x433.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/107-4-770x433.jpg" medium="image"/>
     </item>
@@ -139,33 +163,9 @@
       <title>ミニチュア写真家・田中達也氏の活動15周年を記念した作品集『MINIATURE LIFE 365 田中達也の今日の1枚』本日発売</title>
       <link>https://dime.jp/genre/2108031/</link>
       <guid isPermaLink="true">https://dime.jp/genre/2108031/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
+      <pubDate>Mon, 20 Apr 2026 22:21:07 +0900</pubDate>
       <enclosure url="https://dime.jp/wp-content/uploads/2026/04/H1_01-770x433.jpg" type="image/jpeg" length="0"/>
       <media:content url="https://dime.jp/wp-content/uploads/2026/04/H1_01-770x433.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>物流倉庫のイメージが変わる！マイナス20℃の冷凍倉庫にSF映画みたいな事務所を発見</title>
-      <link>https://dime.jp/genre/2106713/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2106713/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/0-770x513.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/04/0-770x513.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>寿司やラーメンに次ぐ人気！訪日外国人の知られざるアイス需要、コンビニブームが追い風に</title>
-      <link>https://dime.jp/genre/2107140/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2107140/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/00-41.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/04/00-41.jpg" medium="image"/>
-    </item>
-    <item>
-      <title>圧倒的な奥行きのスケルトン・クロノグラフで魅了するノルケインの新作「Wild ONE Skeleton Chrono」</title>
-      <link>https://dime.jp/genre/2107304/</link>
-      <guid isPermaLink="true">https://dime.jp/genre/2107304/</guid>
-      <pubDate>Mon, 20 Apr 2026 19:28:03 +0900</pubDate>
-      <enclosure url="https://dime.jp/wp-content/uploads/2026/04/3-58-770x433.jpg" type="image/jpeg" length="0"/>
-      <media:content url="https://dime.jp/wp-content/uploads/2026/04/3-58-770x433.jpg" medium="image"/>
     </item>
   </channel>
 </rss>
